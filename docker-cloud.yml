@@ -52,7 +52,7 @@ providerdc:
   hostname: provider.dc
   command: >
     bash -c 'echo "Waiting for Onezone ($$ZONEDC_PORT_80_TCP_ADDR) to start on
-    port 80..." ; while : ; do (echo > /dev/tcp/$ZONEDC_PORT_80_TCP_ADDR/80)
+    port 80..." ; while : ; do (echo > /dev/tcp/$$ZONEDC_PORT_80_TCP_ADDR/80)
     >/dev/null 2>&1 ; result=$$?; if [[ $$result -eq 0 ]] ; then break ; fi ; done
     ; echo "Port 80 reachable" ; /root/run.py'
   volumes:
